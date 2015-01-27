@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
+<!doctype html>
+<html lang="en">
+<head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <title>LightSwitch</title>
 
-    <link href="resources/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link href="resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="resources/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
-    <script id="angular-bootstrap" src="resources/js/angular.min.js"></script>
+    <link href="resources/font-awesome/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="resources/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="resources/bootstrap/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
+    <link href="resources/style.css" type="text/css" rel="stylesheet">
 
-    <script>
+    <script src="resources/angular/angular.min.js"></script>
+    <script src="resources/angular/angular-route.min.js"></script>
 
-    </script>
+    <script src="app/app.js"></script>
+
 </head>
-<body class="sapUiBody">
-    <div id="content">
-        <i class="fa fa-refresh fa-spin fa-5x"></i>
-    </div>
+<body ng-app="lightSwitch">
+    <div ng-include="'app/main.view.html'"></div>
 </body>
 </html>

@@ -1,0 +1,116 @@
+/*++++++++++++++++++++++++++++++++++++++++*
+ * LightSwitch Style Sheet
+ *++++++++++++++++++++++++++++++++++++++++*/
+#application{
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: #bdbdbd;
+}
+
+/*----------------------------------------*
+ * Main View
+ *----------------------------------------*/
+#view-main{
+    position: relative;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0 15px 0 15px;
+    background-color: #ffffff;
+}
+
+/*----------------------------------------*
+ * Header
+ *----------------------------------------*/
+#header-background {
+    position: absolute;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1b2124;
+}
+#header-shadow{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+#header{
+    background-color: #1b2124;
+}
+#header h1{
+    margin-top: 12px;
+    font-size: 24pt;
+    color: #92c924;
+}
+#header a.btn{
+    margin: 10px;
+    color: #e9ebe4;
+    outline: none; }
+#header a.btn:hover{ color: #92c924; }
+#header a.btn:focus{ color: #92c924; }
+#header a.btn:active{ color: #e9ebe4; }
+
+/*----------------------------------------*
+ * Navigation
+ *----------------------------------------*/
+#navbar {
+    padding: 0 0 0 0;
+    background-color: #e9ebe4;
+}
+.navbar ul li{
+    min-width: 170px;
+    font-size: 14pt;
+}
+
+.navbar ul li a{
+    color: #1b2124;
+}
+.navbar ul li a:hover{
+    color: #ffffff;
+    background-color: #5ebce8;
+    box-shadow: inset -5px 0 5px -1px #e9ebe4, inset 5px 0 5px -1px #e9ebe4;
+}
+nav.navbar{
+    margin: 0;
+}
+/*----------------------------------------*
+ * Split panel
+ *----------------------------------------*/
+#splitPanel{
+}
+
+/*----------------------------------------*
+ * Shadows
+ *----------------------------------------*/
+.shadow-darkgray{
+    box-shadow: 0 0 5px 5px #1B2124;
+}
+.shadow-inset-white{
+    box-shadow: inset 0 -8px 5px -5px #ffffff;
+}
+/*----------------------------------------*
+ * Test Part
+ *----------------------------------------*/
+.row{
+}
+.row div{
+    padding: 0;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++*
+ * Color codes
+ *++++++++++++++++++++++++++++++++++++++++*/
+/*
+red:        #ff325b
+
+darkgray:	#1b2124
+green:		#92c924
+blue:		#5ebce8
+beige:      #e9ebe4
+white:		#f9f9f9
+*/

@@ -11,15 +11,17 @@
             <a href="" id="btn-menu" class="btn"><i class="fa fa-bars fa-2x"></i></a>
         </div>
     </div>
-    <div class="row" id="navbar">
+    <div id="navbar" class="row" >
         <nav class="navbar">
             <ul class="nav navbar-nav text-center">
-                <li><a href=""><i class="fa fa-lightbulb-o"></i> Lampen</a></li>
-                <li><a href=""><i class="fa fa-list"></i> Gruppen</a></li>
-                <li><a href=""><i class="fa fa-photo"></i> Moods</a></li>
-                <li><a href=""><i class="fa fa-gear"></i> Settings</a></li>
+                <li><a href="#/Lamps/"><i class="fa fa-lightbulb-o"></i> Lampen</a></li>
+                <li><a href="#/Groups/"><i class="fa fa-list"></i> Gruppen</a></li>
+                <li><a href="#/Scenes/"><i class="fa fa-photo"></i> Szenen</a></li>
+                <li><a href="#/Settings/"><i class="fa fa-gear"></i> Einstellungen</a></li>
             </ul>
         </nav>
     </div>
+
+    <div ng-view class="row"></div>
 </div>
 <div id="header-shadow" class="shadow-darkgray"></div>

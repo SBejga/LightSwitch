@@ -75,15 +75,49 @@
     background-color: #5ebce8;
     box-shadow: inset -5px 0 5px -1px #e9ebe4, inset 5px 0 5px -1px #e9ebe4;
 }
+.navbar ul li a:hover,
+.navbar ul li a:active,
+.navbar ul li a:focus{
+    outline: none;
+}
 nav.navbar{
     margin: 0;
 }
 /*----------------------------------------*
- * Split panel
+ * List
  *----------------------------------------*/
-#splitPanel{
+.list{
+    height: 100%;
+}
+.group-down{
+    float: right;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 3px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #1b2124;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
 }
 
+.list-group{
+    border-radius: 0;
+    border-top: none;
+    box-shadow: none;
+    margin: 0;
+}
+.list-group-item{
+}
+.list-group-item:first-child{
+    border-radius: 0;
+    background-color: #dddddd;
+}
+.list-group-item:last-child{
+    border-radius: 0;
+}
 /*----------------------------------------*
  * Shadows
  *----------------------------------------*/

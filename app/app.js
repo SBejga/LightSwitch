@@ -2,21 +2,24 @@ var app = angular.module('lightSwitch', ['ngRoute'])
 .config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/Lamps/', {
+            .when('/lamps/', {
                 templateUrl: 'app/lamps/lamp.view.html',
                 controller: 'LampController',
-                controllerAs: 'lamp',
-                resolve: {
-                    // I will cause a 1 second delay
-                    delay: function($q, $timeout) {
-                        var delay = $q.defer();
-                        $timeout(delay.resolve, 1000);
-                        return delay.promise;
-                    }
-                }
+                controllerAs: 'lamp'
             })
-            .when('/Lamps/:lampId/ch/:chapterId', {
-                templateUrl: 'chapter.html',
-                controller: 'ChapterController'
+            .when('/groups/', {
+                templateUrl: 'app/groups/group.view.html',
+                controller: 'GroupController',
+                controllerAs: 'group'
+            })
+            .when('/scenes/', {
+                templateUrl: 'app/scenes/scene.view.html',
+                controller: 'SceneController',
+                controllerAs: 'scene'
+            })
+            .when('/settings/', {
+                templateUrl: 'app/settings/setting.view.html',
+                controller: 'SettingController',
+                controllerAs: 'setting'
             });
     }]);

@@ -1,9 +1,17 @@
-var app = angular.module('lightSwitch', ['ngRoute'])
-.config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
+var app = angular.module('lightSwitch', ['ngRoute']);
+
+app.config(['$routeProvider', '$locationProvider',
+    function($routeProvider) {
         $routeProvider
+            .when('/', {
+                templateUrl: 'app/lamps/lamp.view.html',
+                listView: 'app/lamps/lampList.view.html',
+                controller: 'LampController',
+                controllerAs: 'lamp'
+            })
             .when('/lamps/', {
                 templateUrl: 'app/lamps/lamp.view.html',
+                listView: 'app/lamps/lampList.view.html',
                 controller: 'LampController',
                 controllerAs: 'lamp'
             })
@@ -21,5 +29,8 @@ var app = angular.module('lightSwitch', ['ngRoute'])
                 templateUrl: 'app/settings/setting.view.html',
                 controller: 'SettingController',
                 controllerAs: 'setting'
-            });
+            })
+            .otherwise({ redirectTo: '/lamps/' });
+
+            $locationProvider.html5Mode(true);
     }]);

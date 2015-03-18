@@ -11,7 +11,6 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .when('/lamps/', {
                 templateUrl: 'app/lamps/lamp.view.html',
-                listView: 'app/lamps/lampList.view.html',
                 controller: 'LampController',
                 controllerAs: 'lamp'
             })
@@ -32,5 +31,5 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .otherwise({ redirectTo: '/lamps/' });
 
-            $locationProvider.html5Mode(true);
+            //$locationProvider.html5Mode(true);
     }]);

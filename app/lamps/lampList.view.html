@@ -1,12 +1,26 @@
+<div ng-controller="LampController as lampCtrl">
+    <div class="list-group" ng-repeat="group in lampCtrl.groups">
+        {{group.name}}
+        <div>
+            <ul class="list-group">
+                <li ng-repeat="lamp in group.lamps" class="list-group-item">{{lamp.name}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!--
 <ul class="list-group">
-    <li class="list-group-item">Wohnzimmer <a href="#"><span class="group-down"><i class="fa fa-chevron-up"></i></span></li></a></li>
+    <li class="list-group-item">Wohnzimmer <a href="#"><span class="group-down"><i class="fa fa-chevron-up"></i></span></a></li>
     <li class="list-group-item">Lampe 1</li>
     <li class="list-group-item">Lampe 2</li>
     <li class="list-group-item">Stripe 1</li>
     <li class="list-group-item">Bloom 1</li>
 </ul>
 <ul class="list-group">
-    <li class="list-group-item">Schlafzimmer <a href="#"><span class="group-down"><i class="fa fa-chevron-up"></i></span></li></a></li>
+    <li class="list-group-item">Schlafzimmer <a href="#"><span class="group-down"><i class="fa fa-chevron-up"></i></span></a></li>
     <li class="list-group-item">Stripe 1</li>
     <li class="list-group-item">Bloom 1</li>
 </ul>
+-->

@@ -1,4 +1,6 @@
 /**
  * Created by Sandro
  */
-app.controller('GroupController', []);
+app.controller('GroupController', function($scope){
+
+});

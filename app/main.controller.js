@@ -1,5 +1,10 @@
-app.controller('MainController', ['$route', '$routeParams', '$location', function($route, $routeParams, $location) {
-    this.$route = $route;
-    this.$location = $location;
-    this.$routeParams = $routeParams;
-}]);
+app.controller('MainController', ['$route', '$routeParams', '$location',
+    function($scope, $route, $routeParams, $location, $state) {
+
+        this.$route = $route;
+        this.$location = $location;
+        this.$routeParams = $routeParams;
+
+        this.listView = 'test';
+    }
+]);

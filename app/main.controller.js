@@ -6,5 +6,9 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
         this.$routeParams = $routeParams;
 
         this.listView = 'test';
+
+        this.test = function(id){
+            alert(id);
+        }
     }
 ]);

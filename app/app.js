@@ -3,12 +3,6 @@ var app = angular.module('lightSwitch', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider',
     function($routeProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl: 'app/lamps/lamp.view.html',
-                listView: 'app/lamps/lampList.view.html',
-                controller: 'LampController',
-                controllerAs: 'lamp'
-            })
             .when('/lamps/', {
                 templateUrl: 'app/lamps/lamp.view.html',
                 controller: 'LampController',

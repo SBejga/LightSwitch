@@ -1,11 +1,14 @@
 <div ng-controller="LampController as lampCtrl">
-    <div class="list-group" ng-repeat="group in lampCtrl.groups">
-        {{group.name}}
-        <div>
-            <ul class="list-group">
-                <li ng-repeat="lamp in group.lamps" class="list-group-item">{{lamp.name}}</li>
-            </ul>
+    <div class="list" ng-repeat="group in lampCtrl.groups">
+        <div class="list-header">
+            {{group.name}}
+            <div style="float:right;"><i class="fa fa-angle-up"></i></div>
         </div>
+        <ul class="list-group">
+            <li ng-repeat="lamp in group.lamps" class="list-group-item">
+                <a href="" ng-click="mainCtrl.test(lamp.id)">{{lamp.name}}</a>
+            </li>
+        </ul>
     </div>
 
 </div>

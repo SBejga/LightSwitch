@@ -1,7 +1,13 @@
+/*++++++++++++++++++++++++++++++++++++++++*
+ * General
+ *++++++++++++++++++++++++++++++++++++++++*/
 body{
     overflow-x: hidden;
     overflow-y: hidden;
+    color: #1b2124;
 }
+a,a:focus, a:active{  outline: none; }
+
 #list-border{
     position: absolute;
     right: 0;
@@ -18,7 +24,9 @@ body{
     max-width: 100%;
     top: 0;
     height: 100%;
+    min-height: 100%;
     background-color: #bdbdbd;
+    overflow: scroll;
 }
 
 /*----------------------------------------*
@@ -26,8 +34,8 @@ body{
  *----------------------------------------*/
 #view-main{
     position: relative;
-    max-width: 1280px;
-    height: 100%;
+    /*max-width: 1280px;*/
+    min-height: 100%;
     margin: 0 auto 0 auto;
     padding: 0 15px 0 15px;
     background-color: #ffffff;
@@ -38,33 +46,35 @@ body{
  *----------------------------------------*/
 #header-background {
     position: absolute;
-    height: 63px;
+    height: 9em;
     top: 0;
     left: 0;
     right: 0;
+    border-top: 0.2em solid #92c924;
     background-color: #1b2124;
 }
 #header-shadow{
     position: absolute;
-    top: 63px;
+    top: 9em;
     left: 0;
     right: 0;
 }
 #header{
     background-color: #1b2124;
+    border-top: 0.2em solid #92c924;
 }
 #header-text{
-    height: 63px;
+    height: 9em;
 }
 #header h1{
-    margin-top: 12px;
-    font-size: 24pt;
+    margin-top: 0.3em;
+    font-size: 5em;
     color: #92c924;
 }
 #header a.btn{
-    margin: 10px;
-    color: #e9ebe4;
-    outline: none; }
+    margin: 0.5em;
+    font-size: 2.5em;
+    color: #e9ebe4;  }
 #header a.btn:hover{ color: #92c924; }
 #header a.btn:focus{ color: #92c924; }
 #header a.btn:active{ color: #e9ebe4; }
@@ -108,17 +118,20 @@ nav.navbar{
  *----------------------------------------*/
 #split-panel{
     position: relative;
-    height: 100%;
+    min-height: 100%;
 }
 #panel-left,
 #panel-content{
     height: 100%;
+    padding: 0;
 }
 /*----------------------------------------*
  * List
  *----------------------------------------*/
 .list{
     height: 100%;
+    border-right: 0.1em solid #dddddd;
+    font-size: 2.5em;
 }
 .group-down{
     float: right;
@@ -133,7 +146,15 @@ nav.navbar{
     white-space: nowrap;
     vertical-align: baseline;
 }
-
+.list-header{
+    border-bottom: 1px solid #ffffff;
+    padding: 0.3em 0.35em;
+    background-color: #dddddd;
+    font-weight: bold;
+}
+.list-header i{
+    font-size: 1em;
+}
 .list-group{
     border-radius: 0;
     border-top: none;
@@ -141,10 +162,20 @@ nav.navbar{
     margin: 0;
 }
 .list-group-item{
+    border-left: none;
+    border-right: none;
+    padding: 0;
+}
+.list-group-item a{
+    display: block;
+    padding: 0.3em 0.35em;
+    text-decoration: none;
+    color: #1b2124;
 }
 .list-group-item:first-child{
     border-radius: 0;
-    background-color: #dddddd;
+    border: none;
+    background-color: #ffffff;
 }
 .list-group-item:last-child{
     border-radius: 0;
@@ -162,8 +193,6 @@ nav.navbar{
  * Test Part
  *----------------------------------------*/
 .row{
-}
-.row div{
     padding: 0;
 }
 

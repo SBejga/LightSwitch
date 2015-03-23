@@ -6,7 +6,7 @@
         </div>
         <ul class="list-content">
             <li ng-repeat="lamp in group.lamps" class="list-item">
-                <a href="" ng-click="mainCtrl.test(lamp.id)">{{lamp.name}}</a>
+                <a href="#/lamps/{{lamp.id}}" ng-click="mainCtrl.switchToMainPanel()">{{lamp.name}}</a>
             </li>
         </ul>
     </div>

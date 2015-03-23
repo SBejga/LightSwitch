@@ -8,6 +8,11 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'LampController',
                 controllerAs: 'lamp'
             })
+            .when('/lamps/:lampId', {
+                templateUrl: 'app/lamps/lamp.view.html',
+                controller: 'LampController',
+                controllerAs: 'lamp'
+            })
             .when('/groups/', {
                 templateUrl: 'app/groups/group.view.html',
                 controller: 'GroupController',
@@ -25,5 +30,5 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .otherwise({ redirectTo: '/lamps/' });
 
-            $locationProvider.html5Mode(true);
+            //$locationProvider.html5Mode(true);
     }]);

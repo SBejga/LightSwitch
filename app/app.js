@@ -1,7 +1,7 @@
 var app = angular.module('lightSwitch', ['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider',
-    function($routeProvider) {
+    function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/lamps/', {
                 templateUrl: 'app/lamps/lamp.view.html',
@@ -25,5 +25,5 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .otherwise({ redirectTo: '/lamps/' });
 
-            //$locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(true);
     }]);

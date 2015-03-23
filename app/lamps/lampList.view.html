@@ -4,8 +4,8 @@
             {{group.name}}
             <div style="float:right;"><i class="fa fa-angle-up"></i></div>
         </div>
-        <ul class="list-group">
-            <li ng-repeat="lamp in group.lamps" class="list-group-item">
+        <ul class="list-content">
+            <li ng-repeat="lamp in group.lamps" class="list-item">
                 <a href="" ng-click="mainCtrl.test(lamp.id)">{{lamp.name}}</a>
             </li>
         </ul>

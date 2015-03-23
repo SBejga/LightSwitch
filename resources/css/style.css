@@ -2,31 +2,34 @@
  * General
  *++++++++++++++++++++++++++++++++++++++++*/
 body{
-    overflow-x: hidden;
-    overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #bdbdbd;
     color: #1b2124;
 }
 a,a:focus, a:active{  outline: none; }
 
-#list-border{
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-left: 1px solid #dddddd;
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11,
+.col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+.col-xs-7, .col-xs-8, .col-xs-9, .row {
+    padding: 0;
+    margin: 0;
 }
 /*++++++++++++++++++++++++++++++++++++++++*
  * LightSwitch Style Sheet
  *++++++++++++++++++++++++++++++++++++++++*/
 #application{
-    position: absolute;
+    position: relative;
     width: 100%;
     max-width: 100%;
-    top: 0;
-    height: 100%;
     min-height: 100%;
+    top: 0;
+    bottom: 0;
     background-color: #bdbdbd;
-    overflow: scroll;
 }
 
 /*----------------------------------------*
@@ -34,57 +37,64 @@ a,a:focus, a:active{  outline: none; }
  *----------------------------------------*/
 #view-main{
     position: relative;
-    /*max-width: 1280px;*/
+    max-width: 1280px;
     min-height: 100%;
     margin: 0 auto 0 auto;
-    padding: 0 15px 0 15px;
+    padding: 4.5em 0 0 0;
     background-color: #ffffff;
 }
 
 /*----------------------------------------*
  * Header
  *----------------------------------------*/
-#header-background {
-    position: absolute;
-    height: 9em;
+#header {
+    position: fixed;
+    height: 4em;
     top: 0;
     left: 0;
     right: 0;
-    border-top: 0.2em solid #92c924;
     background-color: #1b2124;
+    border-top: 0.2em solid #96E100;
+    box-shadow: -5px 0 5px 5px #1b2124, 5px 0 5px 5px #1b2124;
 }
 #header-shadow{
     position: absolute;
-    top: 9em;
-    left: 0;
-    right: 0;
+    top: 4em;
+    width: 100%;
+    box-shadow: -5px 0 5px 5px #1b2124, 5px 0 5px 5px #1b2124;
 }
-#header{
-    background-color: #1b2124;
-    border-top: 0.2em solid #92c924;
+#header-content{
+    max-width: 1280px;
+    margin: 0 auto 0 auto;
 }
 #header-text{
-    height: 9em;
+    height: 4em;
 }
 #header h1{
-    margin-top: 0.3em;
-    font-size: 5em;
-    color: #92c924;
+    margin-top: 0.25em;
+    color: #96E100;
 }
 #header a.btn{
-    margin: 0.5em;
-    font-size: 2.5em;
+    margin: 0.8em;
+    font-size: 0.9em;
     color: #e9ebe4;  }
-#header a.btn:hover{ color: #92c924; }
-#header a.btn:focus{ color: #92c924; }
+#header a.btn:hover{ color: #96E100; }
+#header a.btn:focus{ color: #96E100; }
 #header a.btn:active{ color: #e9ebe4; }
 
 /*----------------------------------------*
  * Navigation
  *----------------------------------------*/
 #navbar {
-    padding: 0 0 0 0;
+    max-width: 1280px;
+    margin: 0 auto 0 auto;
     background-color: #e9ebe4;
+}
+#navbar nav{
+    border: none;
+}
+#navbar-buffer{
+    height: 45px;
 }
 .navbar ul li{
     min-width: 170px;
@@ -108,22 +118,15 @@ nav.navbar{
     margin: 0;
 }
 /*----------------------------------------*
- * View Content
- *----------------------------------------*/
-.view-content{
-    bottom: 0px;
-}
-/*----------------------------------------*
  * Split panel
  *----------------------------------------*/
 #split-panel{
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 #panel-left,
 #panel-content{
     height: 100%;
-    padding: 0;
 }
 /*----------------------------------------*
  * List
@@ -131,54 +134,39 @@ nav.navbar{
 .list{
     height: 100%;
     border-right: 0.1em solid #dddddd;
-    font-size: 2.5em;
-}
-.group-down{
-    float: right;
-    display: inline-block;
-    min-width: 10px;
-    padding: 3px 3px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1;
-    color: #1b2124;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
+    font-size: 1.25em;
+    overflow: scroll;
 }
 .list-header{
     border-bottom: 1px solid #ffffff;
-    padding: 0.3em 0.35em;
+    padding: 0.6em 0.6em;
     background-color: #dddddd;
     font-weight: bold;
 }
 .list-header i{
     font-size: 1em;
 }
-.list-group{
-    border-radius: 0;
-    border-top: none;
-    box-shadow: none;
+.list-content{
     margin: 0;
+    padding: 0;
+
 }
-.list-group-item{
+.list-item{
+    position: relative;
+    display: block;
+    padding: 0;
     border-left: none;
     border-right: none;
-    padding: 0;
+    border-bottom: 1px solid #dddddd;
 }
-.list-group-item a{
+.list-item:hover{
+    background-color: #96E100;
+}
+.list-item a{
     display: block;
-    padding: 0.3em 0.35em;
+    padding: 0.6em 0.6em;
     text-decoration: none;
     color: #1b2124;
-}
-.list-group-item:first-child{
-    border-radius: 0;
-    border: none;
-    background-color: #ffffff;
-}
-.list-group-item:last-child{
-    border-radius: 0;
 }
 /*----------------------------------------*
  * Shadows
@@ -192,9 +180,6 @@ nav.navbar{
 /*----------------------------------------*
  * Test Part
  *----------------------------------------*/
-.row{
-    padding: 0;
-}
 
 /*++++++++++++++++++++++++++++++++++++++++*
  * Color codes

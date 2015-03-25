@@ -1,4 +1,6 @@
 /**
  * Created by Sandro
  */
-app.controller('SceneController', []);
+app.controller('SceneController', function($scope){
+    $scope.mainCtrl.listView = '';
+});

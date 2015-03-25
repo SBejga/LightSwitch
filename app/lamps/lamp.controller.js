@@ -1,7 +1,7 @@
 /**
  * Created by Sandro
  */
-app.controller('LampController', function($scope){
+app.controller('LampController', function($scope, $routeParams){
     $scope.mainCtrl.listView = 'app/lamps/lampList.view.html';
     this.groups = [
         {
@@ -30,5 +30,8 @@ app.controller('LampController', function($scope){
                 {id: '10', name: 'Lampe 10', state: 'on', color: '#ff0000'},
                 {id: '11', name: 'Lampe 11', state: 'on', color: '#ff0000'}]
         }
-    ]
+    ];
+
+    this.routeParams = $routeParams;
+    window.console.log(this.routeParams);
 });

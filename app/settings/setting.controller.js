@@ -1,4 +1,6 @@
 /**
  * Created by Sandro
  */
-app.controller('SettingController', []);
+app.controller('SettingController', function($scope){
+    $scope.mainCtrl.listView = '';
+});

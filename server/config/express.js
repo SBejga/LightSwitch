@@ -1,18 +1,8 @@
-﻿var	express	= require('express');
+﻿console.log('[SERVER] Configuring module express');
+
+var	express	= require('express');
 
 module.exports = function(app) {
-
-	app.server.express.configure(function() {
-
-        //app.server.express.use(express.logger());
-
-        app.server.express.use(express.compress());
-
-        app.server.express.use(express.json());
-
-        app.server.express.use(express.static(__dirname + '/../../client'));
-        app.server.express.use(express.static(__dirname + '/../../debug'));
-
-	});
-	
+    // Deliver static files from frontend folder
+    app.server.express.use(express.static('client'));
 };

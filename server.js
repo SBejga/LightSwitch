@@ -26,7 +26,9 @@ var app = {
 
     server: {},
 
-    controllers: {}
+    controllers: {},
+
+    events:{}
 };
 
 // Load node modules
@@ -41,6 +43,10 @@ require('./server/config/socket')(app);
 require('./server/config/mongoose')(app);
 
 
+
+// set up global event infrastructure
+app.events = require('./server/modules/events');
+
 // Include all controllers
 require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(file) {
     var controller;
@@ -50,6 +56,12 @@ require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(fi
         app.controllers[controller] = require('./server/controllers/' + controller)(app);
     }
 });
+
+// fire ready event
+console.log('[SERVER] All controllers loaded, firing ready event');
+app.events.fire('ready');
+
+
 
 // Start HTTP Server
 app.server.http.listen(80);

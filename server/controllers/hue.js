@@ -40,19 +40,20 @@ var errorHandler = function(err) {
  * find the Hue Bridge in the local network
  */
 var findBridge = function() {
-	
+
 	// try to find the bridge over Philips' Internet API
-	hue.locateBridges(function(err, data) {
-		
+	//hue.locateBridges(function(err, data) {
+	hue.nupnpSearch(function(err, data) {
+
 		// switch to network scan if that doesn't work
 		if(err || !data || !data.length) {
 			console.log('[hue] Hue Bridge not found with Internet API, switching to network scan');
 			
-			hue.searchForBridges(2000)
+			//hue.searchForBridges(2000)
+			hue.upnpSearch(2000)
 				.then(bridgeLocated)
 				.done();
-		}
-		else {
+		} else {
 			bridgeLocated(data);
 		}
 		
@@ -158,7 +159,7 @@ var registerToBridge = function() {
 var connectToBridge = function() {
     api = new hue.HueApi(host, app.config.hueUser);
 
-    api.connect()
+    /*api.connect()
         .then(function(data) {
 
             // valid user
@@ -174,8 +175,7 @@ var connectToBridge = function() {
 
         })
         .fail(errorHandler)
-        .done();
-
+        .done();*/
 };
 
 /**

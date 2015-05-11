@@ -132,6 +132,17 @@ nav.navbar{
     /*overflow: scroll;
     overflow-x: hidden;*/
 }
+#panel-content{
+    padding: 0 5px 5px 5px;
+}
+
+/*----------------------------------------*
+ * Headlines
+ *----------------------------------------*/
+h2{
+  font-size: 25px;
+}
+
 /*----------------------------------------*
  * List
  *----------------------------------------*/
@@ -180,6 +191,19 @@ nav.navbar{
 .shadow-inset-white{
     box-shadow: inset 0 -8px 5px -5px #ffffff;
 }
+
+/*----------------------------------------*
+ * Lamp View
+ *----------------------------------------*/
+#lampView .header button{
+    position: absolute;
+    top: 17px;
+    right: 10px;
+}
+
+
+
+
 /*----------------------------------------*
  * Test Part
  *----------------------------------------*/

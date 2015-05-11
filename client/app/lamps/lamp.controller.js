@@ -52,4 +52,11 @@ app.controller('LampController', function($scope, $routeParams){
             this.lamp = this.lamps[$i];
         }
     }
+
+    $scope.$on('$viewContentLoaded', function(){
+        //Here your view content is fully loaded !!
+        var cp = ColorPicker(document.getElementById('mycolorpicker'), function() {});
+        cp.setHsv({ h: 180, s: .2, v: .7 });
+    });
+
 });

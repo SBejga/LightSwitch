@@ -1,0 +1,25 @@
+<div ng-controller="LightController as lightCtrl">
+    <div class="list" ng-show="lightCtrl.lights">
+        <div class="list-header">
+            <span>All Lamps</span>
+            <div style="float:right;"><i class="fa fa-angle-up"></i></div>
+        </div>
+        <ul class="list-content">
+            <li ng-repeat="light in lightCtrl.lights" class="list-item">
+                <a href="#/lights/{{light.id}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="list" ng-repeat="group in lightCtrl.groups">
+        <div class="list-header">
+            <span>{{group.name}}</span>
+            <div style="float:right;"><i class="fa fa-angle-up"></i></div>
+        </div>
+        <ul class="list-content">
+            <li ng-repeat="light in group.lights" class="list-item">
+                <a href="#/lights/{{lightCtrl.lights[light]}}}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
+            </li>
+        </ul>
+    </div>
+
+</div>

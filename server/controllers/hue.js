@@ -176,6 +176,14 @@ var connectToBridge = function() {
         })
         .fail(errorHandler)
         .done();*/
+    if(typeof(api) != 'undefined'){
+        app.state.connect.hueRegistered = true;
+        executeWaitingApiCalls();
+        refreshState(true);
+    }else{
+        errorHandler();
+    }
+
 };
 
 /**

@@ -3,15 +3,15 @@ var app = angular.module('lightSwitch', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/lamps/', {
-                templateUrl: 'app/lamps/lamp.view.html',
-                controller: 'LampController',
-                controllerAs: 'lampCtrl'
+            .when('/lights/', {
+                templateUrl: 'app/lights/light.view.html',
+                controller: 'LightController',
+                controllerAs: 'lightCtrl'
             })
-            .when('/lamps/:lampId', {
-                templateUrl: 'app/lamps/lamp.view.html',
-                controller: 'LampController',
-                controllerAs: 'lampCtrl'
+            .when('/lights/:lightId', {
+                templateUrl: 'app/lights/light.view.html',
+                controller: 'LightController',
+                controllerAs: 'lightCtrl'
             })
             .when('/groups/', {
                 templateUrl: 'app/groups/group.view.html',
@@ -28,7 +28,7 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'SettingController',
                 controllerAs: 'settingCtrl'
             })
-            .otherwise({ redirectTo: '/lamps/' });
+            .otherwise({ redirectTo: '/lights/' });
 
             // Makes Pretty URLs, but forces rerendering of the PAge
             //$locationProvider.html5Mode(true);

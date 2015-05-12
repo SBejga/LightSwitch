@@ -6,6 +6,11 @@ app.controller('LightController', function($scope, $routeParams, $http) {
     this.routeParams = $routeParams;
     this.groups = {};
     this.lights = {};
+    this.light = null;
+
+    if(typeof this.showAllLights === 'undefined'){
+        this.showAllLights = false;
+    }
 
     this.getLights = function () {
         $http({
@@ -19,7 +24,7 @@ app.controller('LightController', function($scope, $routeParams, $http) {
         console.log(data);
         if(data.state){
             //save lights to light controller
-            $scope.lightCtrl.lights = data.state.lights;
+            $scope.lights = data.state.lights;
             //prepare groups
             var $groups = data.state.groups;
             for($key in groups){
@@ -31,7 +36,7 @@ app.controller('LightController', function($scope, $routeParams, $http) {
 
 
 
-    /*this.groups = [
+    $scope.groups = [
         {
             id: '1',
             name: 'Wohnzimmer',
@@ -58,9 +63,9 @@ app.controller('LightController', function($scope, $routeParams, $http) {
                 {id: '10', name: 'Lampe 10', state: 'on', color: '#ff0000'},
                 {id: '11', name: 'Lampe 11', state: 'on', color: '#ff0000'}]
         }
-    ];*/
+    ];
 
-    /*this.lights = {
+    $scope.lights = {
         1: {id: '1', name: 'Lampe 1', state: 'on', color: '#ff0000'},
         2: {id: '2', name: 'Lampe 2', state: 'on', color: '#ff0000'},
         3: {id: '3', name: 'Lampe 3', state: 'on', color: '#ff0000'},
@@ -72,13 +77,29 @@ app.controller('LightController', function($scope, $routeParams, $http) {
         9: {id: '9', name: 'Lampe 9', state: 'on', color: '#ff0000'},
         10: {id: '10', name: 'Lampe 10', state: 'on', color: '#ff0000'},
         11: {id: '11', name: 'Lampe 11', state: 'on', color: '#ff0000'}
-    };*/
+    };
 
-    /*for($i in this.lights){
-        if(this.lights[$i].id === this.routeParams.lampId){
-            this.lamp = this.lights[$i];
+    for(i in $scope.lights){
+        if($scope.lights[i].id === this.routeParams.lightId){
+            $scope.light = $scope.lights[i];
         }
-    }*/
+    }
 
-    this.getLights();
+    this.onShowAllLights = function(element){
+        if(typeof this.showAllLights === 'undefined'){
+            this.showAllLights = true;
+        }else{
+            this.showAllLights = !this.showAllLights;
+        }
+    }
+
+    this.onToggleShowGroup = function(group){
+        if(typeof group.show === 'undefined'){
+            group.show = true;
+        }else{
+            group.show = !group.show;
+        }
+    }
+
+    //this.getLights();
 });

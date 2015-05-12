@@ -1,1 +1,12 @@
-{{lightCtrl.light.name}}
+<div id="view-light" ng-if="lightCtrl.light">
+    <div class="header">
+        <h2>{{lightCtrl.light.name}}</h2>
+        <button type="button" class="btn btn-default btn-on"><i class="fa fa-power-off"></i></button>
+        <hr>
+    </div>
+    <div class="content">
+
+        <input class="color {slider:false}">
+
+    </div>
+</div>

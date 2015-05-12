@@ -1,0 +1,9 @@
+<div id="view-groupList" ng-controller="GroupController as groupCtrl">
+    <div class="list">
+        <ul class="list-content">
+            <li  ng-repeat="group in groups" class="list-item">
+                <a href="#/groups/{{group.id}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

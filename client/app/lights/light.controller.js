@@ -2,104 +2,52 @@
  * Lamp Controller
  */
 app.controller('LightController', function($scope, $routeParams, $http) {
-    $scope.mainCtrl.listView = 'app/lights/lightList.view.html';
     this.routeParams = $routeParams;
     this.groups = {};
     this.lights = {};
     this.light = null;
 
-    if(typeof this.showAllLights === 'undefined'){
-        this.showAllLights = false;
-    }
+    /**
+     * Function to initialize the light controller
+     */
+    this.init = function(){
+        $scope.mainCtrl.listView = 'app/lights/lightList.view.html';
+        this.lights = $scope.mainCtrl.getLights();
+        this.groups = $scope.mainCtrl.getGroups();
 
-    this.getLights = function () {
-        $http({
-            url: '/rest/',
-            method: "GET",
-            params: {password: 'password'}
-        }).success(this.setLights).error();
-    };
+        if(typeof this.showAllLights === 'undefined'){
+            this.showAllLights = true;
+        }
 
-    this.setLights = function (data, status, headers, config){
-        console.log(data);
-        if(data.state){
-            //save lights to light controller
-            $scope.lights = data.state.lights;
-            //prepare groups
-            var $groups = data.state.groups;
-            for($key in groups){
-                //console.log($key + "    " + groups[$key]);
-                //$scope.lightCtrl.groups
+        for(var i in this.lights){
+            if(this.lights[i].id === this.routeParams.lightId){
+                this.light = this.lights[i];
             }
         }
     };
 
-
-
-    $scope.groups = [
-        {
-            id: '1',
-            name: 'Wohnzimmer',
-            lights:[
-                {id: '1', name: 'Lampe 1', state: 'on', color: '#ff0000'},
-                {id: '2', name: 'Lampe 2', state: 'on', color: '#ff0000'},
-                {id: '3', name: 'Lampe 3', state: 'on', color: '#ff0000'},
-                {id: '4', name: 'Lampe 4', state: 'on', color: '#ff0000'},
-                {id: '5', name: 'Lampe 5', state: 'on', color: '#ff0000'}]
-        },
-        {
-            id: '2',
-            name: 'Esszimmer',
-            lights:[
-                {id: '6', name: 'Lampe 6', state: 'on', color: '#ff0000'},
-                {id: '7', name: 'Lampe 7', state: 'on', color: '#ff0000'}]
-        },
-        {
-            id: '3',
-            name: 'Schlafzimmer',
-            lights:[
-                {id: '8', name: 'Lampe 8', state: 'on', color: '#ff0000'},
-                {id: '9', name: 'Lampe 9', state: 'on', color: '#ff0000'},
-                {id: '10', name: 'Lampe 10', state: 'on', color: '#ff0000'},
-                {id: '11', name: 'Lampe 11', state: 'on', color: '#ff0000'}]
-        }
-    ];
-
-    $scope.lights = {
-        1: {id: '1', name: 'Lampe 1', state: 'on', color: '#ff0000'},
-        2: {id: '2', name: 'Lampe 2', state: 'on', color: '#ff0000'},
-        3: {id: '3', name: 'Lampe 3', state: 'on', color: '#ff0000'},
-        4: {id: '4', name: 'Lampe 4', state: 'on', color: '#ff0000'},
-        5: {id: '5', name: 'Lampe 5', state: 'on', color: '#ff0000'},
-        6: {id: '6', name: 'Lampe 6', state: 'on', color: '#ff0000'},
-        7: {id: '7', name: 'Lampe 7', state: 'on', color: '#ff0000'},
-        8: {id: '8', name: 'Lampe 8', state: 'on', color: '#ff0000'},
-        9: {id: '9', name: 'Lampe 9', state: 'on', color: '#ff0000'},
-        10: {id: '10', name: 'Lampe 10', state: 'on', color: '#ff0000'},
-        11: {id: '11', name: 'Lampe 11', state: 'on', color: '#ff0000'}
-    };
-
-    for(i in $scope.lights){
-        if($scope.lights[i].id === this.routeParams.lightId){
-            $scope.light = $scope.lights[i];
-        }
-    }
-
-    this.onShowAllLights = function(element){
+    /**
+     * Function to show or hide the all Lamps group
+     */
+    this.onToggleAllLights = function(){
         if(typeof this.showAllLights === 'undefined'){
             this.showAllLights = true;
         }else{
             this.showAllLights = !this.showAllLights;
         }
-    }
+    };
 
+    /**
+     * Function to show or hide the list of lights in a group
+     * @param group Light group
+     */
     this.onToggleShowGroup = function(group){
         if(typeof group.show === 'undefined'){
             group.show = true;
         }else{
             group.show = !group.show;
         }
-    }
+    };
 
-    //this.getLights();
+    this.init();
 });

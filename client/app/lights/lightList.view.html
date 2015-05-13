@@ -2,20 +2,20 @@
     <div class="list" ng-show="lightCtrl.lights">
         <div class="list-header">
             <span>All Lamps</span>
-            <button style="float:right;" ng-click="lightCtrl.onShowAllLights()" ng-show="lightCtrl.showAllLights">
+            <button style="float:right;" ng-click="lightCtrl.onToggleAllLights()" ng-show="lightCtrl.showAllLights">
                 <i class="fa fa-angle-up"></i>
             </button>
-            <button style="float:right;" ng-click="lightCtrl.onShowAllLights()" ng-show="!lightCtrl.showAllLights">
+            <button style="float:right;" ng-click="lightCtrl.onToggleAllLights()" ng-show="!lightCtrl.showAllLights">
                 <i class="fa fa-angle-down"></i>
             </button>
         </div>
         <ul class="list-content" ng-show="lightCtrl.showAllLights">
-            <li ng-repeat="light in lights" class="list-item">
+            <li ng-repeat="light in lightCtrl.lights" class="list-item">
                 <a href="#/lights/{{light.id}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
             </li>
         </ul>
     </div>
-    <div class="list" ng-repeat="group in groups">
+    <div class="list" ng-repeat="group in lightCtrl.groups">
         <div class="list-header">
             <span>{{group.name}}</span>
             <button style="float:right;" ng-click="lightCtrl.onToggleShowGroup(group)" ng-show="group.show">

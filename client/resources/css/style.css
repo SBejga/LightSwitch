@@ -2,11 +2,12 @@
  * General
  *++++++++++++++++++++++++++++++++++++++++*/
 body{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #bdbdbd;
     color: #1b2124;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 a,a:focus, a:active{  outline: none; }
 

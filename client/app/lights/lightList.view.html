@@ -26,8 +26,9 @@
             </button>
         </div>
         <ul class="list-content" ng-show="group.show">
-            <li ng-repeat="light in group.lights" class="list-item">
-                <a href="#/lights/{{lightCtrl.lights[light]}}}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
+            <li ng-repeat="lightId in group.lights" class="list-item">
+                <!--<a href="#/lights/{{lightCtrl.lights[light]}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>-->
+                {{lightId}}
             </li>
         </ul>
     </div>

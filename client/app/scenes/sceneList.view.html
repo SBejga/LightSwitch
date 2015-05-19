@@ -1,0 +1,9 @@
+<div id="view-sceneList" ng-controller="SceneController as sceneCtrl">
+    <div class="list">
+        <ul class="list-content">
+            <li  ng-repeat="scene in sceneCtrl.scenes" class="list-item">
+                <a href="#/scenes/{{scene.name}}" ng-click="mainCtrl.switchToMainPanel()">{{scene.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

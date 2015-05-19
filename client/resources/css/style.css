@@ -198,6 +198,22 @@ h2{
     right: 10px;
 }
 
+#view-light #colorPicker .cp-hslsaturation{
+    display: none;
+}
+#view-light #colorPicker .cp-hsllightness{
+    /*display: none;*/
+}
+
+/*----------------------------------------*
+ * Color Picker
+ *----------------------------------------*/
+.cp-slider .cp-marker{
+    background: #aaaaaa;
+    border: 5px solid transparent;
+    width: 12px;
+    height: 28px;
+}
 
 
 

@@ -1,10 +1,10 @@
 /**
  * Lamp Controller
  */
-app.controller('LightController', function($scope, $routeParams, $http) {
+app.controller('LightController', function($scope, $routeParams) {
     this.routeParams = $routeParams;
-    this.groups = {};
-    this.lights = {};
+    this.groups = null;
+    this.lights = null;
     this.light = null;
 
     /**
@@ -20,9 +20,33 @@ app.controller('LightController', function($scope, $routeParams, $http) {
         }
 
         for(var i in this.lights){
-            if(this.lights[i].id === this.routeParams.lightId){
+            if(this.lights[i].name === this.routeParams.lightName){
                 this.light = this.lights[i];
             }
+        }
+
+        this.createColorPicker();
+
+    };
+
+    /**
+     * Function to create the color picker slider
+     */
+    this.createColorPicker = function(){
+        var colorPicker = $('#colorPicker');
+        if(!colorPicker.children().length) {
+            //http://www.virtuosoft.eu/code/bootstrap-colorpickersliders/
+            colorPicker.ColorPickerSliders({
+                color: 'rgb(255, 0, 0)',
+                size: 'large',
+                flat: true,
+                sliders: true,
+                swatches: false,
+                hsvpanel: false,
+                order: {
+                    hsl: 1
+                }
+            });
         }
     };
 

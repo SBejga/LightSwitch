@@ -83,11 +83,20 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
         };
         /**
          * Function to get list of light groups from nodejs backend state
-         * @returns {lights}
+         * @returns {groups}
          */
         this.getGroups = function(){
             if(typeof this.state != 'undefined'){
                 return this.state.groups;
+            }
+        };
+        /**
+         * Function to get scenes from nodejs backend state
+         * @return {scenes}
+         */
+        this.getScenes = function(){
+            if(typeof this.state != 'undefined'){
+                return this.state.scenes;
             }
         };
 
@@ -98,8 +107,6 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
          */
         this.loadTestData = function(){
             this.state = {
-                "area":"",
-                "state":{
                     "connect":{
                         "mongodb":true,
                         "hue":true,
@@ -179,7 +186,7 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
                                 "reachable":false
                             },
                             "type":"Extended color light",
-                            "name":"K�che",
+                            "name":"Küche",
                             "modelid":"LCT001",
                             "uniqueid":"00:17:88:01:00:e1:1e:ff-0b",
                             "swversion":"66010820"},
@@ -340,12 +347,13 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
                     },
                     "sensors":{},
                     "favorites":{},
-                    "scenes":{},
+                    "scenes":{
+                        //1:{name:"Test Scene"}
+                    },
                     "automation":{},
                     "devices":{},
                     "party":{},
                     "rfid":{}
-                }
             };
         };
 

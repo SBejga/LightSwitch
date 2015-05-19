@@ -8,7 +8,7 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'LightController',
                 controllerAs: 'lightCtrl'
             })
-            .when('/lights/:lightId', {
+            .when('/lights/:lightName', {
                 templateUrl: 'app/lights/light.view.html',
                 controller: 'LightController',
                 controllerAs: 'lightCtrl'
@@ -18,7 +18,17 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'GroupController',
                 controllerAs: 'groupCtrl'
             })
+            .when('/groups/:groupName', {
+                templateUrl: 'app/groups/group.view.html',
+                controller: 'GroupController',
+                controllerAs: 'groupCtrl'
+            })
             .when('/scenes/', {
+                templateUrl: 'app/scenes/scene.view.html',
+                controller: 'SceneController',
+                controllerAs: 'sceneCtrl'
+            })
+            .when('/scenes/:sceneId', {
                 templateUrl: 'app/scenes/scene.view.html',
                 controller: 'SceneController',
                 controllerAs: 'sceneCtrl'

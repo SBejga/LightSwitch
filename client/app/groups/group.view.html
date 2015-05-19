@@ -1,6 +1,9 @@
 <div id="view-group">
-    <div class="header">
-        <h2>{{group.name}}</h2>
+    <div class="header" ng-hide="groupCtrl.groups || groupCtrl.groups === {}">
+        <h2>No Groups available</h2>
+    </div>
+    <div class="header" ng-show="groupCtrl.group.name">
+        <h2>Group {{groupCtrl.group.name}}</h2>
         <hr>
     </div>
 </div>

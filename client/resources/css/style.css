@@ -202,7 +202,27 @@ h2{
     display: none;
 }
 #view-light #colorPicker .cp-hsllightness{
-    /*display: none;*/
+    display: none;
+}
+
+#lamp{
+    width: 160px;
+    height: 320px;
+    margin: 20px auto 0 auto;
+}
+#lamp-color{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin: 2px auto 0 auto;
+}
+#lamp-img{
+    width: 160px;
+    height:214px;
+    margin: -160px auto 0 auto;
+    background-image: url(/resources/images/transparent_light.png);
+    background-size: 160px 214px;
+    background-repeat: no-repeat;
 }
 
 /*----------------------------------------*

@@ -8,7 +8,12 @@
         <hr>
     </div>
     <div class="content" ng-show="lightCtrl.light.name">
+        <input id="color" type="hidden" ng-value="ff0000" ng-model="lightCtrl.light.color" data-color-format="hex" />
         <div id="colorPicker"></div>
+        <div id="lamp">
+            <div id="lamp-color"></div>
+            <div id="lamp-img"></div>
+        </div>
 
     </div>
 </div>

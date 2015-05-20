@@ -19,14 +19,16 @@ app.controller('LightController', function($scope, $routeParams) {
             this.showAllLights = true;
         }
 
+        this.detectSelectedLight();
+        this.createColorPicker();
+    };
+
+    this.detectSelectedLight = function(){
         for(var i in this.lights){
             if(this.lights[i].name === this.routeParams.lightName){
                 this.light = this.lights[i];
             }
         }
-
-        this.createColorPicker();
-
     };
 
     /**
@@ -45,7 +47,9 @@ app.controller('LightController', function($scope, $routeParams) {
                 hsvpanel: false,
                 order: {
                     hsl: 1
-                }
+                },
+                connectedinput: "#color",
+                onchange: this.onColorSelected
             });
         }
     };
@@ -71,6 +75,11 @@ app.controller('LightController', function($scope, $routeParams) {
         }else{
             group.show = !group.show;
         }
+    };
+
+    this.onColorSelected = function(container, color){
+        $('#lamp-color').css('background-color', '#' + color.tiny.toHex());
+        console.log($scope.lightCtrl.light.color);
     };
 
     this.init();

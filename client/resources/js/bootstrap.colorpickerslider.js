@@ -95,12 +95,9 @@
                 }
 
                 settings.labels = $.extend({
-                    //hslhue: 'HSL-Hue',
-                    //hslsaturation: 'HSL-Saturation',
-                    //hsllightness: 'HSL-Lightness',
-                    hslhue: '',
-                    hslsaturation: '',
-                    hsllightness: '',
+                    hslhue: 'HSL-Hue',
+                    hslsaturation: 'HSL-Saturation',
+                    hsllightness: 'HSL-Lightness',
                     rgbred: 'RGB-Red',
                     rgbgreen: 'RGB-Green',
                     rgbblue: 'RGB-Blue',

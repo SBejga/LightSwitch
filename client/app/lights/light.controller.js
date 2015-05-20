@@ -3,6 +3,7 @@
  */
 app.controller('LightController', function($scope, $routeParams) {
     this.routeParams = $routeParams;
+    this.editMode = false;
     this.groups = null;
     this.lights = null;
     this.light = null;
@@ -17,6 +18,10 @@ app.controller('LightController', function($scope, $routeParams) {
 
         if(typeof this.showAllLights === 'undefined'){
             this.showAllLights = true;
+        }
+
+        if(typeof this.routeParams.lightName != 'undefined' && this.routeParams.lightName != null ){
+            $scope.mainCtrl.switchToMainPanel();
         }
 
         this.detectSelectedLight();
@@ -40,6 +45,11 @@ app.controller('LightController', function($scope, $routeParams) {
             //http://www.virtuosoft.eu/code/bootstrap-colorpickersliders/
             colorPicker.ColorPickerSliders({
                 color: 'rgb(255, 0, 0)',
+                labels:{
+                    hslhue: '',
+                    hslsaturation: '',
+                    hsllightness: ''
+                },
                 size: 'large',
                 flat: true,
                 sliders: true,
@@ -79,7 +89,10 @@ app.controller('LightController', function($scope, $routeParams) {
 
     this.onColorSelected = function(container, color){
         $('#lamp-color').css('background-color', '#' + color.tiny.toHex());
-        console.log($scope.lightCtrl.light.color);
+        if(typeof $scope.lightCtrl != 'undefined' && $scope.lightCtrl.light != {} && $scope.lightCtrl.light != null){
+            $scope.lightCtrl.light.color = color.tiny.toHex();
+        }
+
     };
 
     this.init();

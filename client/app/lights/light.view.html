@@ -4,15 +4,19 @@
     </div>
     <div class="header" ng-show="lightCtrl.light.name">
         <h2>{{lightCtrl.light.name}}</h2>
-        <button type="button" class="btn btn-default btn-on"><i class="fa fa-power-off"></i></button>
+        <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
         <hr>
     </div>
     <div class="content" ng-show="lightCtrl.light.name">
-        <input id="color" type="hidden" ng-value="ff0000" ng-model="lightCtrl.light.color" data-color-format="hex" />
+        <form name="colorForm">
+            <input id="color" type="hidden" ng-model="color" data-color-format="hex" />
+        </form>
         <div id="colorPicker"></div>
         <div id="lamp">
             <div id="lamp-color"></div>
-            <div id="lamp-img"></div>
+            <div id="lamp-img">
+                <button type="button" class="btn btn-default btn-on"><i class="fa fa-power-off"></i></button>
+            </div>
         </div>
 
     </div>

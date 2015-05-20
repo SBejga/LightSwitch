@@ -110,6 +110,48 @@ nav.navbar{
     margin: 0;
 }
 /*----------------------------------------*
+ * Overlay
+ *----------------------------------------*/
+#overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#overlay-background{
+    position: absolute;
+    top: 4.1em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333333;
+    opacity: .5;
+}
+#overlay-dialog{
+    position: relative;
+    margin: 15% auto 0 auto;
+    max-width: 500px;
+    width: 100%;
+    background-color: #ffffff;
+
+}
+#overlay-dialog .header{
+    /*background-color: #1b2124;*/
+    background-color: #dddddd;
+    /*border-top: 0.2em solid #96E100;*/
+    min-height: 4em;
+}
+#overlay-dialog .header h2{
+    margin: 0;
+    padding: 15px;
+    color: #333333;
+}
+#overlay-dialog .content{
+    margin: 15px;
+}
+
+/*----------------------------------------*
  * Split panel
  *----------------------------------------*/
 #split-panel{
@@ -220,9 +262,16 @@ h2{
     width: 160px;
     height:214px;
     margin: -160px auto 0 auto;
-    background-image: url(/resources/images/transparent_light.png);
+    background-image: url("/resources/images/transparent_light.png");
     background-size: 160px 214px;
     background-repeat: no-repeat;
+}
+
+#lamp-img .btn{
+    position: absolute;
+    top: 305px;
+    margin-left: -18px;
+    left: 50%;
 }
 
 /*----------------------------------------*

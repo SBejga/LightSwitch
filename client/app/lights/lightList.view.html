@@ -11,7 +11,7 @@
         </div>
         <ul class="list-content" ng-show="lightCtrl.showAllLights">
             <li ng-repeat="light in lightCtrl.lights" class="list-item">
-                <a href="#/lights/{{light.name}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
+                <a href="#/lights/{{$index}}" ng-click="mainCtrl.switchToMainPanel()">{{light.name}}</a>
             </li>
         </ul>
     </div>
@@ -27,7 +27,7 @@
         </div>
         <ul class="list-content" ng-show="group.show">
             <li ng-repeat="lightId in group.lights" class="list-item">
-                <a href="#/lights/{{lightCtrl.lights[lightId].name}}" ng-click="mainCtrl.switchToMainPanel()">{{lightCtrl.lights[lightId].name}}</a>
+                <a href="#/lights/{{lightId}}" ng-click="mainCtrl.switchToMainPanel()">{{lightCtrl.lights[lightId].name}}</a>
             </li>
         </ul>
     </div>

@@ -30,7 +30,7 @@ app.controller('LightController', function($scope, $routeParams) {
 
     this.detectSelectedLight = function(){
         for(var i in this.lights){
-            if(this.lights[i].name === this.routeParams.lightName){
+            if(i === this.routeParams.lightId){
                 this.light = this.lights[i];
             }
         }

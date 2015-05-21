@@ -8,7 +8,7 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'LightController',
                 controllerAs: 'lightCtrl'
             })
-            .when('/lights/:lightName', {
+            .when('/lights/:lightId', {
                 templateUrl: 'app/lights/light.view.html',
                 controller: 'LightController',
                 controllerAs: 'lightCtrl'

@@ -121,8 +121,10 @@ var handleRequest = function(req, res) {
 
     socketDummyListeners.forEach(function(listener) {
         if(listener[0] === action) {
+            console.log('[DEBUG] ');
+            console.log(req.body);
             foundListener = true;
-            listener[1](req.body.data || false);
+            listener[1](req.body || false);
         }
     });
 

@@ -1,7 +1,7 @@
 /**
  * Lamp Controller
  */
-app.controller('LightController', function($scope, $routeParams) {
+app.controller('LightController', function($scope, $routeParams, $http) {
     this.routeParams = $routeParams;
     this.editMode = false;
     this.groups = null;
@@ -32,6 +32,7 @@ app.controller('LightController', function($scope, $routeParams) {
         for(var i in this.lights){
             if(i === this.routeParams.lightId){
                 this.light = this.lights[i];
+                this.light.id = i;
             }
         }
     };
@@ -92,7 +93,31 @@ app.controller('LightController', function($scope, $routeParams) {
         if(typeof $scope.lightCtrl != 'undefined' && $scope.lightCtrl.light != {} && $scope.lightCtrl.light != null){
             $scope.lightCtrl.light.color = color.tiny.toHex();
         }
+        //this.sendLampState();
+    };
 
+    this.onPowerSwitch = function(){
+        if(typeof this.light.state.on != 'undefined' && this.light.state.on != null){
+            this.light.state.on = !this.light.state.on;
+        }
+        //this.sendLampState();
+    };
+
+    this.sendLampState = function(){
+        $http({
+            url: '/rest/light.state',
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            params: {password: 'password'},
+            data: this.light
+        }).success(this.test).error();
+    };
+
+    this.test = function(data, status, headers, config){
+        console.log(data);
+        console.log(status);
     };
 
     this.init();

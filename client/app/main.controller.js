@@ -1,6 +1,6 @@
-app.controller('MainController', ['$route', '$routeParams', '$location',
+app.controller('MainController', ['$scope', '$route', '$routeParams', '$location', '$http',
     function($scope, $route, $routeParams, $location, $http) {
-        this.testMode = true;
+        this.testMode = false;
         this.state = {};
         this.routeParams = $routeParams;
         this.listView = '';
@@ -68,7 +68,7 @@ app.controller('MainController', ['$route', '$routeParams', '$location',
             console.log(data);
             if(data.state){
                 //save state to scope
-                this.state = data.state;
+                $scope.mainCtrl.state = data.state;
             }
         };
 

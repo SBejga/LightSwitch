@@ -1,7 +1,7 @@
 /**
  * Created by Sandro
  */
-app.controller('SceneController', function($scope, $routeParams){
+app.controller('SceneController', function($scope, $routeParams, $http){
     $scope.mainCtrl.listView = 'app/scenes/sceneList.view.html';
     this.routeParams = $routeParams;
     this.scenes = null;

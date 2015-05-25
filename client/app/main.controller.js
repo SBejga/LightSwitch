@@ -69,6 +69,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
             if(data.state){
                 //save state to scope
                 $scope.mainCtrl.state = data.state;
+                console.log(data.state);
             }
         };
 
@@ -177,9 +178,10 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
                         "1":{
                             "state":{
                                 "on":false,
-                                "bri":0,
-                                "hue":0,
-                                "sat":0,
+                                "bri":0, // brightness 0-255
+                                "hue":0, //hue color 0-
+                                "sat":0, //saturation 0-255
+                                "ct":0, //white kelvin 500-153 (2000K - 6500K)
                                 "alert":"none",
                                 "effect":"none",
                                 "colormode":"hs",

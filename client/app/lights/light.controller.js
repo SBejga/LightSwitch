@@ -91,16 +91,22 @@ app.controller('LightController', function($scope, $routeParams, $http) {
     this.onColorSelected = function(container, color){
         $('#lamp-color').css('background-color', '#' + color.tiny.toHex());
         if(typeof $scope.lightCtrl != 'undefined' && $scope.lightCtrl.light != {} && $scope.lightCtrl.light != null){
-            $scope.lightCtrl.light.color = color.tiny.toHex();
+            //$scope.lightCtrl.light.state.hue = color.cielch.c*color.cielch.l;
+            $scope.lightCtrl.light.state.sat = 255;
+            $scope.lightCtrl.light.state.bri = 255;
+            $scope.lightCtrl.light.state.effect = '';
+
+            console.log(color);
+            $scope.lightCtrl.sendLampState();
         }
-        //this.sendLampState();
+
     };
 
     this.onPowerSwitch = function(){
         if(typeof this.light.state.on != 'undefined' && this.light.state.on != null){
             this.light.state.on = !this.light.state.on;
         }
-        //this.sendLampState();
+        this.sendLampState();
     };
 
     this.sendLampState = function(){
@@ -116,8 +122,8 @@ app.controller('LightController', function($scope, $routeParams, $http) {
     };
 
     this.test = function(data, status, headers, config){
-        console.log(data);
-        console.log(status);
+        //console.log(data);
+        //console.log(status);
     };
 
     this.init();

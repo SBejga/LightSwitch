@@ -33,7 +33,7 @@ var app = {
 
 // Load node modules
 app.server.express = require('express')();
-app.server.https   = require('https').createServer(app.server.express);
+//app.server.https   = require('https').createServer(app.server.express);
 app.server.http    = require('http').createServer(app.server.express);
 app.server.io      = require('socket.io').listen(app.server.http);
 

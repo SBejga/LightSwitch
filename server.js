@@ -1,6 +1,7 @@
 console.log('[SERVER] Starting Smart Lights backend');
 
 // global application object
+
 var app = {
 
     config: {},
@@ -20,7 +21,13 @@ var app = {
         favorites: {},
         scenes: {},
         automation: {},
+        rfid: {},
+        rfidUnknown: [],
         devices: {},
+        speech: {
+            testMode: false,
+            recognized: false
+        },
         party: {}
     },
 
@@ -30,6 +37,9 @@ var app = {
 
     events:{}
 };
+
+// set up global event infrastructure
+app.events = require('./server/modules/events');
 
 // Load node modules
 app.server.express = require('express')();
@@ -41,11 +51,6 @@ app.server.io      = require('socket.io').listen(app.server.http);
 require('./server/config/express')(app);
 require('./server/config/socket')(app);
 require('./server/config/mongoose')(app);
-
-
-
-// set up global event infrastructure
-app.events = require('./server/modules/events');
 
 // Include all controllers
 require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(file) {
@@ -60,8 +65,6 @@ require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(fi
 // fire ready event
 console.log('[SERVER] All controllers loaded, firing ready event');
 app.events.fire('ready');
-
-
 
 // Start HTTP Server
 app.server.http.listen(80);

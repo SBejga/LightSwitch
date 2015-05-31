@@ -47,7 +47,7 @@ app.server.express	= require('express')();
 app.server.http		= require('http').createServer(app.server.express);
 app.server.io		= require('socket.io').listen(app.server.http);
 
-app.server.http.listen(80);
+app.server.http.listen(8080);
 
 
 // Configuration

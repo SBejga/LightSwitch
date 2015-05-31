@@ -33,9 +33,7 @@ var app = {
 
     server: {},
 
-    controllers: {},
-
-    events:{}
+    controllers: {}
 };
 
 // set up global event infrastructure

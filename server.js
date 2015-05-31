@@ -73,5 +73,5 @@ app.events.fire('ready');
 
 
 // Start HTTP Server
-app.server.http.listen(8080);
-console.log('[SERVER] Server is now available on Port 8080');
+app.server.http.listen(80);
+console.log('[SERVER] Server is now available on Port 80');

@@ -2,4 +2,4 @@
 
 APP = "/srv/LightSwitch/server.js"
 
-forever $1 $APP
+forever $1 "$APP"

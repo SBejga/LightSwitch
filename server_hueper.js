@@ -68,8 +68,6 @@ require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(fi
     }
 });
 
-
-
 // fire ready event
 
 console.log('[SERVER] All controllers loaded, firing ready event');

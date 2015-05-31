@@ -45,6 +45,10 @@ app.server.express = require('express')();
 app.server.http    = require('http').createServer(app.server.express);
 app.server.io      = require('socket.io').listen(app.server.http);
 
+// Start HTTP Server
+app.server.http.listen(80);
+console.log('[SERVER] Server is now available on Port 80');
+
 // Load module configurations
 require('./server/config/express')(app);
 require('./server/config/socket')(app);
@@ -64,6 +68,4 @@ require('fs').readdirSync(__dirname + '/server/controllers').forEach(function(fi
 console.log('[SERVER] All controllers loaded, firing ready event');
 app.events.fire('ready');
 
-// Start HTTP Server
-app.server.http.listen(80);
-console.log('[SERVER] Server is now available on Port 80');
+

@@ -1,5 +1,5 @@
 <div id="view-light">
-    <div class="header" ng-hide="lightCtrl.lights || lightCtrl.lights === {}">
+    <div class="header" ng-hide="lightCtrl.lightsAvailable()">
         <h2>No Lights available</h2>
     </div>
     <div class="header" ng-show="lightCtrl.light.name">

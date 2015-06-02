@@ -121,6 +121,10 @@ app.controller('LightController', function($scope, $routeParams, $http) {
         }).success(this.test).error();
     };
 
+    this.lightsAvailable = function(){
+        return (Object.keys(this.lights).length !== 0);
+    };
+
     this.test = function(data, status, headers, config){
         //console.log(data);
         //console.log(status);

@@ -1,5 +1,5 @@
 <div id="view-lightList" ng-controller="LightController as lightCtrl">
-    <div class="list" ng-show="lightCtrl.lights">
+    <div class="list" ng-show="lightCtrl.lightsAvailable()">
         <div class="list-header">
             <span>All Lamps</span>
             <button style="float:right;" ng-click="lightCtrl.onToggleAllLights()" ng-show="lightCtrl.showAllLights">

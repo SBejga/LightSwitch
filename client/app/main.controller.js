@@ -16,13 +16,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
          */
         this.init = function(){
             this.switchToMainPanel();
-
-            if(!this.testMode){
-                this.loadState();
-            }else{
-                this.loadTestData();
-            }
-
+            this.loadState();
             //Go to login screen if state is empty
             if(this.state = {}){
                 $location.url('/');
@@ -58,13 +52,18 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
 
         /**
          * Load state from hue
+         * If test mode is active load test data
          */
         this.loadState = function () {
-            $http({
-                url: '/rest/',
-                method: "GET",
-                params: {password: 'password'}
-            }).success(this.setState).error();
+            if(this.testMode){
+                this.loadTestData();
+            }else{
+                $http({
+                    url: '/rest/',
+                    method: "GET",
+                    params: {password: 'password'}
+                }).success(this.setState).error();
+            }
         };
 
         /**
@@ -78,7 +77,6 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
             if(data.state){
                 //save state to scope
                 $scope.mainCtrl.state = data.state;
-                console.log(data.state);
             }
         };
 

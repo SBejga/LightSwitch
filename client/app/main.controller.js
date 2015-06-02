@@ -1,21 +1,31 @@
 app.controller('MainController', ['$scope', '$route', '$routeParams', '$location', '$http',
     function($scope, $route, $routeParams, $location, $http) {
-        this.testMode = false;
-        this.state = {};
         this.routeParams = $routeParams;
-        this.listView = '';
-        this.sidePanelClass = '';
         this.mainPanelClass = 'hidden-xs';
         this.navigationClass = 'hidden-xs hidden-sm hidden-md';
+        this.testMode = false;
+        this.password = null;
+        this.state = {};
+        this.modalView = null;
+        this.listView = null;
+        this.sidePanelClass = null;
+
 
         /**
          * Function to initialize main controller
          */
         this.init = function(){
+            this.switchToMainPanel();
+
             if(!this.testMode){
                 this.loadState();
             }else{
                 this.loadTestData();
+            }
+
+            //Go to login screen if state is empty
+            if(this.state = {}){
+                $location.url('/');
             }
         };
 
@@ -65,7 +75,6 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
          * @param config
          */
         this.setState = function (data, status, headers, config){
-            console.log(data);
             if(data.state){
                 //save state to scope
                 $scope.mainCtrl.state = data.state;
@@ -98,6 +107,16 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.getScenes = function(){
             if(typeof this.state != 'undefined'){
                 return this.state.scenes;
+            }
+        };
+
+        /**
+         * Function to test login
+         */
+        this.onLogin = function(){
+            this.loadState();
+            if(this.state != {}){
+                $location.url('/lights/');
             }
         };
 

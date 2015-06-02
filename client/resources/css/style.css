@@ -275,6 +275,21 @@ h2{
 }
 
 /*----------------------------------------*
+ * Buttons
+ *----------------------------------------*/
+button.btn-primary{
+    background-color: #96E100;
+    color: #1B2124;
+    border-color: #dddddd;
+}
+button.btn:hover{
+    background-color: #96E100;
+    color: #1B2124;
+    border-color: #dddddd;
+}
+
+
+ /*----------------------------------------*
  * Color Picker
  *----------------------------------------*/
 .cp-slider .cp-marker{

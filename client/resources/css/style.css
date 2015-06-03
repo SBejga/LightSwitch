@@ -96,14 +96,17 @@ a,a:focus, a:active{  outline: none; }
 .navbar ul li a{
     color: #1b2124;
 }
-.navbar ul li a:hover{
+/*.navbar ul li a:hover{
     color: #ffffff;
     background-color: #5ebce8;
     box-shadow: inset -5px 0 5px -1px #e9ebe4, inset 5px 0 5px -1px #e9ebe4;
-}
+}*/
 .navbar ul li a:hover,
 .navbar ul li a:active,
 .navbar ul li a:focus{
+    color: #ffffff;
+    background-color: #5ebce8;
+    box-shadow: inset -5px 0 5px -1px #e9ebe4, inset 5px 0 5px -1px #e9ebe4;
     outline: none;
 }
 nav.navbar{
@@ -193,7 +196,8 @@ h2{
     background-color: transparent;
     border: none;
 }
-.list-header button:hover > i{
+.list-header button:hover > i,
+.list-header button:focus > i{
     color: #96E100;
 }
 .list-header i{
@@ -212,7 +216,8 @@ h2{
     border-right: none;
     border-bottom: 1px solid #dddddd;
 }
-.list-item:hover{
+.list-item:hover,
+.list-item a:focus{
     background-color: #96E100;
 }
 .list-item a{

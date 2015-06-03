@@ -44,5 +44,5 @@ app.config(['$routeProvider', '$locationProvider',
             .otherwise({ redirectTo: '/lights/' });
 
             // Makes Pretty URLs, but forces rerendering of the Page
-            $locationProvider.html5Mode(true);
+            //$locationProvider.html5Mode(true);
     }]);

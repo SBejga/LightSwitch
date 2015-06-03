@@ -9,6 +9,8 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.listView = null;
         this.sidePanelClass = null;
 
+        this.testMode = true;
+
 
         /**
          * Function to initialize main controller

@@ -37,9 +37,9 @@ app.config(['$routeProvider', '$locationProvider',
                 controllerAs: 'sceneCtrl'
             })
             .when('/settings/', {
-                templateUrl: 'app/settings/setting.view.html',
-                controller: 'SettingController',
-                controllerAs: 'settingCtrl'
+                templateUrl: 'app/settings/settings.view.html',
+                controller: 'SettingsController',
+                controllerAs: 'settingsCtrl'
             })
             .otherwise({ redirectTo: '/lights/' });
 

@@ -8,6 +8,7 @@ app.controller('GroupController', function($scope, $routeParams){
     this.group = {};
 
     this.init = function(){
+
         this.groups = $scope.mainCtrl.getGroups();
 
         for(var i in this.groups){
@@ -15,8 +16,6 @@ app.controller('GroupController', function($scope, $routeParams){
                 this.group = this.groups[i];
             }
         }
-
-        console.log(Boolean(!this.groups));
     };
 
     this.init();

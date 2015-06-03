@@ -3,7 +3,6 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.routeParams = $routeParams;
         this.mainPanelClass = 'hidden-xs';
         this.navigationClass = 'hidden-xs hidden-sm hidden-md';
-        this.testMode = false;
         this.password = null;
         this.state = {};
         this.modalView = null;
@@ -17,9 +16,17 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.init = function(){
             this.switchToMainPanel();
             this.loadState();
+            this.checkPassword();
+        };
+
+        this.checkPassword = function(){
             //Go to login screen if state is empty
-            if(this.state = {}){
+            if(this.password === null || this.state === {}){
+                this.listView = '';
                 $location.url('/');
+                return false;
+            }else{
+                return true;
             }
         };
 
@@ -27,8 +34,11 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
          * Function to navigate to specific target
          */
         this.onNavigateTo = function(url){
-            this.setNavVisibility(false);
-            $location.url(url);
+            // check if password is valid
+            if(this.checkPassword()){
+                this.setNavVisibility(false);
+                $location.url(url);
+            }
         };
 
         /**
@@ -69,7 +79,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
                 $http({
                     url: '/rest/',
                     method: "GET",
-                    params: {password: 'password'}
+                    params: {password: this.password}
                 }).success(this.setState).error();
             }
         };
@@ -121,7 +131,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
          */
         this.onLogin = function(){
             this.loadState();
-            if(this.state != {}){
+            if(this.checkPassword()){
                 $location.url('/lights/');
             }
         };

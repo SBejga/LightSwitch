@@ -24,6 +24,14 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         };
 
         /**
+         * Function to navigate to specific target
+         */
+        this.onNavigateTo = function(url){
+            this.setNavVisibility(false);
+            $location.url(url);
+        };
+
+        /**
          * Switch CSS Classes to display side panel
          */
         this.switchToSidePanel = function(){

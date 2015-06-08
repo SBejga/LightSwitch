@@ -3,7 +3,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.routeParams = $routeParams;
         this.mainPanelClass = 'hidden-xs';
         this.navigationClass = 'hidden-xs hidden-sm hidden-md';
-        this.password = null;
+        this.password = 'password';
         this.state = {};
         this.modalView = null;
         this.listView = null;

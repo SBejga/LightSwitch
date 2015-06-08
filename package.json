@@ -1,0 +1,39 @@
+{
+  "name": "LightSwitch",
+  "version": "1.0.0",
+  "description": "LightSwitch is a UI to control Smart Light of Philips hue family based on a nodeJS backend system.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "ipv4-range": "^0.0.0",
+    "mongoose": "^4.0.1",
+    "network-address": "^1.0.0",
+    "node-hue-api": "^1.0.5",
+    "ping": "^0.1.9",
+    "serialport": "^1.6.3",
+    "socket.io": "^1.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandr0ne/LightSwitch.git"
+  },
+  "keywords": [
+    "LighSwitch",
+    "UI",
+    "Philips",
+    "hue",
+    "DHBW"
+  ],
+  "author": "Sandro Kuckert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sandr0ne/LightSwitch/issues"
+  },
+  "homepage": "https://github.com/sandr0ne/LightSwitch"
+}

@@ -294,10 +294,12 @@ button.btn-primary{
     color: #1B2124;
     border-color: #d0d0d0;
 }
-button.btn:hover{
+button.btn:hover,
+button.btn:focus{
     background-color: #96E100;
     color: #1B2124;
     border-color: #d0d0d0;
+    outline: none;
 }
 
 

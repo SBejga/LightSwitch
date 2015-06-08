@@ -18,9 +18,16 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
         this.init = function(){
             this.switchToMainPanel();
             this.loadState();
-            this.checkPassword();
+            //Redirect to lights list if already logged in
+            if(this.checkPassword() && ($location.path() === '' || $location.path() === '/')){
+                $location.url('/lights/');
+            }
         };
 
+        /**
+         * Function to check password validity on REST-API
+         * @returns {boolean}
+         */
         this.checkPassword = function(){
             //Go to login screen if state is empty
             if(this.password === null || this.state === {}){
@@ -135,6 +142,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
             this.loadState();
             if(this.checkPassword()){
                 $location.url('/lights/');
+                this.switchToSidePanel();
             }
         };
 

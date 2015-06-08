@@ -1,25 +1,25 @@
 <div id="header-content" class="row">
-    <div id="nav-return-btn" class="col-xs-2 col-sm-2 hidden-md hidden-lg  text-left" >
-        <a href="" id="btn-return" class="btn" ng-click="mainCtrl.switchToSidePanel()" ng-class="mainCtrl.mainPanelClass"><i class="fa fa-chevron-left fa-2x"></i></a>
+    <div id="nav-return-btn" class="col-xs-2 col-sm-2 hidden-md hidden-lg  text-left">
+        <a href="" id="btn-return" class="btn" ng-click="mainCtrl.switchToSidePanel()" ng-class="mainCtrl.mainPanelClass" ng-show="mainCtrl.listView">
+            <i class="fa fa-chevron-left fa-2x"></i>
+        </a>
     </div>
     <div id="header-text" class="col-xs-8 col-sm-8 col-md-12 col-lg-12 text-center">
         <h1>LightSwitch</h1>
     </div>
     <div class="col-xs-2 col-sm-2 hidden-md hidden-lg  text-right">
-        <a href="" id="btn-menu" class="btn" ng-click="mainCtrl.setNavVisibility(true)"><i class="fa fa-bars fa-2x"></i></a>
+        <a href="" id="btn-menu" class="btn" ng-click="mainCtrl.setNavVisibility(true)" ng-hide="mainCtrl.checkPassword()">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
     </div>
 </div>
 <div id="navbar" class="row" ng-class="mainCtrl.navigationClass">
     <nav class="navbar">
         <ul class="nav navbar-nav text-center">
-            <li><a href="/lamps/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-lightbulb-o"></i> Lampen</a></li>
-            <li><a href="/groups/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-list"></i> Gruppen</a></li>
-            <li><a href="/scenes/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-photo"></i> Szenen</a></li>
-            <li class="highlighted"><a href="/settings/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-gear"></i> Einstellungen</a></li>
-            <!--<li><a href="" ng-click="mainCtrl.onNavigateTo('/lights/')"><i class="fa fa-lightbulb-o"></i> Lampen</a></li>
-            <li><a href="" ng-click="mainCtrl.onNavigateTo('/groups/')"><i class="fa fa-list"></i> Gruppen</a></li>
-            <li><a href="" ng-click="mainCtrl.onNavigateTo('/scenes/')"><i class="fa fa-photo"></i> Szenen</a></li>
-            <li><a href="" ng-click="mainCtrl.onNavigateTo('/settings/')"><i class="fa fa-gear"></i> Einstellungen</a></li>-->
+            <li><a href="#/lights/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-lightbulb-o"></i> Lampen</a></li>
+            <li><a href="#/groups/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-list"></i> Gruppen</a></li>
+            <li><a href="#/scenes/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-photo"></i> Szenen</a></li>
+            <li><a href="#/settings/" ng-click="mainCtrl.setNavVisibility(false)"><i class="fa fa-gear"></i> Einstellungen</a></li>
         </ul>
     </nav>
 </div>

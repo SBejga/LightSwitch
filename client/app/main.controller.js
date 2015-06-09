@@ -30,7 +30,7 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
          */
         this.checkPassword = function(){
             //Go to login screen if state is empty
-            if(this.password === null || this.state === {}){
+            if(this.password === null || this.password === '' || this.state === {}){
                 this.listView = '';
                 $location.url('/');
                 return false;
@@ -133,6 +133,16 @@ app.controller('MainController', ['$scope', '$route', '$routeParams', '$location
             if(typeof this.state != 'undefined'){
                 return this.state.scenes;
             }
+        };
+        /**
+         *
+         */
+        this.getSettings = function(){
+            return {
+                "appConfig": this.state.appConfig,
+                "config": this.state.config,
+                "devices": this.state.devices
+            };
         };
 
         /**

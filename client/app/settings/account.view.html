@@ -1,0 +1,28 @@
+<div id="view-settings-account">
+    <div class="header">
+        <h2>Setting - Account</h2>
+        <hr>
+    </div>
+    <div class="content row">
+        <div class="panel panel-default col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="panel-heading">Change Password</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="oldPassword">Old Password</label>
+                    <input type="password" class="form-control" id="oldPassword" placeholder="old password" ng-model="settingsCtrl.oldPassword">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="new password" ng-model="settingsCtrl.newPassword">
+                </div>
+                <div class="form-group">
+                    <label for="repPassword">Repeat Password</label>
+                    <input type="password" class="form-control" id="repPassword" placeholder="repeat password" ng-model="settingsCtrl.repPassword">
+                </div>
+                <div class="form-group pull-right">
+                    <button class="btn btn-primary" ng-click="settingsCtrl.onChangePassword()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

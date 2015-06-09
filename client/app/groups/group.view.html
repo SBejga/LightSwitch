@@ -1,9 +1,21 @@
 <div id="view-group">
-    <div class="header" ng-hide="groupCtrl.groups || groupCtrl.groups === {}">
-        <h2>No Groups available</h2>
-    </div>
     <div class="header" ng-show="groupCtrl.group.name">
-        <h2>Group {{groupCtrl.group.name}}</h2>
-        <hr>
+        <h2 ng-hide="groupCtrl.groupsAvailable()">No Lights available</h2>
+        <h2 ng-show="groupCtrl.groupsAvailable()">Group {{groupCtrl.group.name}}</h2>
+        <button type="button" class="btn btn-default" ng-show="groupCtrl.groupsAvailable()">
+            <i class="fa fa-pencil"></i>
+        </button>
+        <hr ng-show="groupCtrl.groupsAvailable()">
+    </div>
+    <div class="content" ng-show="groupCtrl.group.name">
+        <form>
+            <div class="form-group">
+                <div class="checkbox" ng-repeat="light in groupCtrl.lights">
+                    <label>
+                        <input type="checkbox" ng-checked="groupCtrl.isInGroup(light)">{{light.name}}
+                    </label>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

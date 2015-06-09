@@ -2,7 +2,7 @@
     <div class="list">
         <ul class="list-content">
             <li  ng-repeat="group in groupCtrl.groups" class="list-item">
-                <a href="#/groups/{{group.name}}" ng-click="mainCtrl.switchToMainPanel()">{{group.name}}</a>
+                <a href="#/groups/{{$index + 1}}" ng-click="mainCtrl.switchToMainPanel()">{{group.name}}</a>
             </li>
         </ul>
     </div>

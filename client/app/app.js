@@ -21,7 +21,7 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'GroupController',
                 controllerAs: 'groupCtrl'
             })
-            .when('/groups/:groupName', {
+            .when('/groups/:groupId', {
                 templateUrl: 'app/groups/group.view.html',
                 controller: 'GroupController',
                 controllerAs: 'groupCtrl'
@@ -36,11 +36,27 @@ app.config(['$routeProvider', '$locationProvider',
                 controller: 'SceneController',
                 controllerAs: 'sceneCtrl'
             })
-            .when('/settings/', {
-                templateUrl: 'app/settings/settings.view.html',
+            .when('/settings/account', {
+                templateUrl: 'app/settings/account.view.html',
                 controller: 'SettingsController',
                 controllerAs: 'settingsCtrl'
             })
+            .when('/settings/speech', {
+                templateUrl: 'app/settings/speech.view.html',
+                controller: 'SettingsController',
+                controllerAs: 'settingsCtrl'
+            })
+            .when('/settings/rfid', {
+                templateUrl: 'app/settings/rfid.view.html',
+                controller: 'SettingsController',
+                controllerAs: 'settingsCtrl'
+            })
+            .when('/settings/devices', {
+                templateUrl: 'app/settings/devices.view.html',
+                controller: 'SettingsController',
+                controllerAs: 'settingsCtrl'
+            })
+            .when('/settings/', { redirectTo: '/settings/account' })
             .otherwise({ redirectTo: '/lights/' });
 
             // Makes Pretty URLs, but forces rerendering of the Page

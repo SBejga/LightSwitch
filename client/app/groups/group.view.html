@@ -1,5 +1,5 @@
 <div id="view-group">
-    <div class="header" ng-show="groupCtrl.group.name">
+    <div id="headline" ng-show="groupCtrl.group.name">
         <h2 ng-hide="groupCtrl.groupsAvailable()">No Lights available</h2>
         <h2 ng-show="groupCtrl.groupsAvailable()">Group {{groupCtrl.group.name}}</h2>
         <button type="button" class="btn btn-default" ng-show="groupCtrl.groupsAvailable()">

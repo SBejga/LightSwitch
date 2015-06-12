@@ -168,7 +168,15 @@ nav.navbar{
 #panel-left{
 }
 #panel-content{
-    padding: 0 10px 10px 10px;
+    padding: 0 0 10px 10px;
+}
+#headline{
+    margin: 0 10px 0 0;
+}
+#headline button{
+    position: absolute;
+    top: 17px;
+    right: 10px;
 }
 
 /*----------------------------------------*
@@ -235,6 +243,12 @@ h2{
 .shadow-inset-white{
     box-shadow: inset 0 -8px 5px -5px #ffffff;
 }
+/*----------------------------------------*
+ * Panel
+ *----------------------------------------*/
+.panel{
+    margin: 0 10px 10px 0;
+}
 
 /*----------------------------------------*
  * Login View
@@ -246,12 +260,9 @@ h2{
 /*----------------------------------------*
  * Lamp View
  *----------------------------------------*/
-#view-light .header button{
-    position: absolute;
-    top: 17px;
-    right: 10px;
+#view-light #colorPicker{
+    margin: 0 10px 0 0;
 }
-
 #view-light #colorPicker .cp-hslsaturation{
     display: none;
 }
@@ -260,9 +271,10 @@ h2{
 }
 
 #lamp{
-    width: 160px;
+    /*width: 160px;
     height: 320px;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0 auto;*/
+    margin: 20px 10px 0 0;
 }
 #lamp-color{
     border-radius: 50%;
@@ -285,16 +297,6 @@ h2{
     margin-left: -18px;
     left: 50%;
 }
-
-/*----------------------------------------*
- * Group View
-/*----------------------------------------*/
-#view-group .header button{
-    position: absolute;
-    top: 17px;
-    right: 10px;
-}
-
 
 /*----------------------------------------*
  * Buttons

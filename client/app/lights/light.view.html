@@ -1,16 +1,13 @@
 <div id="view-light">
-    <div class="header" ng-hide="lightCtrl.lightsAvailable()">
+    <div id="headline" ng-hide="lightCtrl.lightsAvailable()">
         <h2>No Lights available</h2>
     </div>
-    <div class="header" ng-show="lightCtrl.light.name">
+    <div id="headline" ng-show="lightCtrl.light.name">
         <h2>{{lightCtrl.light.name}}</h2>
         <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i></button>
         <hr>
     </div>
     <div class="content" ng-show="lightCtrl.light.name">
-        <form name="colorForm">
-            <input id="color" type="hidden" ng-model="color" data-color-format="hsl" />
-        </form>
         <div id="colorPicker"></div>
         <div id="lamp">
             <div id="lamp-color"></div>
